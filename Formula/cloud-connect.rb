@@ -2,16 +2,16 @@
 class CloudConnect < Formula
   desc "CLI for managing transit gateway attachments."
   homepage "https://github.com/telia-oss/cloudconnect"
-  version "0.0.1"
+  version "0.1.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/telia-oss/cloudconnect/releases/download/v0.0.1/cloud-connect-0.0.1-darwin-amd64.tar.gz"
-    sha256 "1d80921c0346ee64fbc9f4918349613c13cc9552ef726b439c435c9d6bea2dbc"
+    url "https://github.com/telia-oss/cloudconnect/releases/download/v0.1.0/cloud-connect-0.1.0-darwin-amd64.tar.gz"
+    sha256 "b83088ea4548b159f8856d48f94efeb882daec76b0a78d04d006077844648d47"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/telia-oss/cloudconnect/releases/download/v0.0.1/cloud-connect-0.0.1-linux-amd64.tar.gz"
-      sha256 "9fbb9f5a0994651e2671534fa29553905333eb7dd57b4a7de8b2f3085edcc087"
+      url "https://github.com/telia-oss/cloudconnect/releases/download/v0.1.0/cloud-connect-0.1.0-linux-amd64.tar.gz"
+      sha256 "93be36cdfd28de20e61335b2c92dd0f51b4f8436d37195118eb9bfb27f47c437"
     end
   end
 
