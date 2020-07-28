@@ -2,22 +2,21 @@
 class CloudConnect < Formula
   desc "CLI for managing transit gateway attachments."
   homepage "https://github.com/telia-oss/cloudconnect"
-  version "0.0.2"
+  version "0.1.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/telia-oss/cloudconnect/releases/download/v0.0.2/cloud-connect-0.0.2-darwin-amd64.tar.gz"
-    sha256 "a3b5c469b201daa0d4e173cdccfc8b84b2609c86147a8b6a22b6682af3f397ba"
+    url "https://github.com/telia-oss/cloudconnect/releases/download/v0.1.0/cloud-connect-0.1.0-darwin-amd64.tar.gz"
+    sha256 "bdee59b0464a1a222ea718605f16052cdfc56a51b20887bfed87d1e7be8d913b"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/telia-oss/cloudconnect/releases/download/v0.0.2/cloud-connect-0.0.2-linux-amd64.tar.gz"
-      sha256 "1677e3fe3dd0d9c6baacf690d1431632326941dccc59f7a195b577fe63315e73"
+      url "https://github.com/telia-oss/cloudconnect/releases/download/v0.1.0/cloud-connect-0.1.0-linux-amd64.tar.gz"
+      sha256 "133d7d36faeca2084be06192bad32c247f2824d89f43351d3633bee252d9cd40"
     end
   end
 
   def install
     bin.install "cloud-connect"
-    bin.install "autoapprover"
   end
 
   test do
