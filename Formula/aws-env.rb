@@ -6,7 +6,6 @@ class AwsEnv < Formula
   desc "A small binary for securely handling secrets in environment variables on AWS."
   homepage "https://github.com/telia-oss/aws-env"
   version "1.1.0"
-  bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/telia-oss/aws-env/releases/download/v1.1.0/aws-env-1.1.0-darwin-amd64.tar.gz"
