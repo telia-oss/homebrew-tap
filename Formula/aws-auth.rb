@@ -3,7 +3,6 @@ class AwsAuth < Formula
   desc "CLI for authenticating against AWS"
   homepage "https://github.com/telia-oss/aws-auth"
   version "0.0.1"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/telia-oss/aws-auth/releases/download/v0.0.1/aws-auth-0.0.1-darwin-amd64.tar.gz"
