@@ -6,7 +6,6 @@ class CloudConnect < Formula
   desc "CLI for managing transit gateway attachments."
   homepage "https://github.com/telia-oss/cloudconnect"
   version "0.2.1"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/telia-oss/cloudconnect/releases/download/v0.2.1/cloud-connect-0.2.1-darwin-amd64.tar.gz"
