@@ -5,31 +5,39 @@
 class AwsEnv < Formula
   desc "A small binary for securely handling secrets in environment variables on AWS."
   homepage "https://github.com/telia-oss/aws-env"
-  version "1.2.0"
+  version "1.3.0"
 
   on_macos do
-    url "https://github.com/telia-oss/aws-env/releases/download/v1.2.0/aws-env-1.2.0-darwin-amd64.tar.gz"
-    sha256 "9c06cb77bdbdbe6bca421245f790e43f1fe236a99368e63e3808aeacf4d1335a"
+    if Hardware::CPU.intel?
+      url "https://github.com/telia-oss/aws-env/releases/download/v1.3.0/aws-env-1.3.0-darwin-amd64.tar.gz"
+      sha256 "1e2d54dd5a254aa330d865abeb18dbc2bdec0b0d51e13fa5e16c3aeaf679c4c4"
 
-    def install
-      bin.install "aws-env"
+      def install
+        bin.install "aws-env"
+      end
     end
-
     if Hardware::CPU.arm?
-      def caveats
-        <<~EOS
-          The darwin_arm64 architecture is not supported for the AwsEnv
-          formula at this time. The darwin_amd64 binary may work in compatibility
-          mode, but it might not be fully supported.
-        EOS
+      url "https://github.com/telia-oss/aws-env/releases/download/v1.3.0/aws-env-1.3.0-darwin-arm64.tar.gz"
+      sha256 "9bdc2a6afe82e7b03f8bb22111d8905778cb7fa0bd10c7ce52716182903db870"
+
+      def install
+        bin.install "aws-env"
       end
     end
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/telia-oss/aws-env/releases/download/v1.3.0/aws-env-1.3.0-linux-arm64.tar.gz"
+      sha256 "cb6120346b177bd965f57764084469c488fee305a4d0a15ef4c34509f35f5807"
+
+      def install
+        bin.install "aws-env"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/telia-oss/aws-env/releases/download/v1.2.0/aws-env-1.2.0-linux-amd64.tar.gz"
-      sha256 "ee0c587dea289080b50b17efab1447e05e100d522357d9930083ba364769c4bb"
+      url "https://github.com/telia-oss/aws-env/releases/download/v1.3.0/aws-env-1.3.0-linux-amd64.tar.gz"
+      sha256 "62f67b83574d8417e792eb32bd5d989e5fa826d190d57c8d2309ba7047693646"
 
       def install
         bin.install "aws-env"
